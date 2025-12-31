@@ -1,0 +1,12 @@
+import cv2
+import matplotlib.pyplot as plt
+
+img = cv2.imread('lab2.png')
+img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
+
+cv2.putText(img, "OpenCV LAB", (50, 50),
+            cv2.FONT_HERSHEY_SIMPLEX, 1, (255,255,255), 2)
+
+plt.imshow(img)
+plt.axis('off')
+
