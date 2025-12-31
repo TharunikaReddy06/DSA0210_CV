@@ -1,0 +1,17 @@
+import cv2
+import numpy as np
+import matplotlib.pyplot as plt
+
+# Read grayscale image
+img = cv2.imread('lab2.png', 0)
+
+# Structuring element
+kernel = np.ones((5, 5), np.uint8)
+
+# Apply erosion
+eroded = cv2.erode(img, kernel, iterations=1)
+
+# Display result
+plt.imshow(eroded, cmap='gray')
+plt.axis('off')
+
