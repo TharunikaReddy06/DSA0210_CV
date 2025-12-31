@@ -1,0 +1,21 @@
+import cv2
+import matplotlib.pyplot as plt
+
+img = cv2.imread('lab2.png')
+img_rgb = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
+
+h, w, _ = img_rgb.shape
+
+# Crop safe region
+crop = img_rgb[h//4:h//2, w//4:w//2]
+
+# Get crop size
+ch, cw, _ = crop.shape
+
+# Paste crop at top-left corner
+img_rgb[0:ch, 0:cw] = crop
+
+# Display image
+plt.imshow(img_rgb)
+plt.axis('off')
+
